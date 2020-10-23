@@ -15,6 +15,6 @@ func main() {
 	fmt.Printf("Is daylight savings? %t", isdst.IsDST(t))
 
 	// Non-DST
-	t := time.Date(2020, time.June, 1, 0, 0, 0, 0, loc)
+	t = time.Date(2020, time.June, 1, 0, 0, 0, 0, loc)
 	fmt.Printf("Is daylight savings? %t", isdst.IsDST(t))
 }
