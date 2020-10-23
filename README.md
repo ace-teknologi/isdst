@@ -14,17 +14,22 @@ See [proposal: time: add Time.IsDST() bool method #42102](https://github.com/gol
 ```go
 package main
 
-import "github.com/ace-teknologi/isdst"
+import (
+	"fmt"
+	"time"
+
+	"github.com/ace-teknologi/isdst"
+)
 
 func main() {
-  loc, _ := time.LoadLocation("Australia/Broken_Hill")
+	loc, _ := time.LoadLocation("Australia/Broken_Hill")
 
-  // DST
-  t := time.Date(2020, time.January, 1, 0, 0, 0, 0, loc)
-  fmt.Printf("Is daylight savings? %t", isdst.IsDST(t))
+	// DST
+	t := time.Date(2020, time.January, 1, 0, 0, 0, 0, loc)
+	fmt.Printf("Is daylight savings? %t", isdst.IsDST(t))
 
-  // Non-DST
-  t := time.Date(2020, time.June, 1, 0, 0, 0, 0, loc)
-  fmt.Printf("Is daylight savings? %t", isdst.IsDST(t))
+	// Non-DST
+	t := time.Date(2020, time.June, 1, 0, 0, 0, 0, loc)
+	fmt.Printf("Is daylight savings? %t", isdst.IsDST(t))
 }
 ```
